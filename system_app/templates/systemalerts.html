@@ -7,7 +7,7 @@
 
 <body>
     <h1 style="color:blue">System status</h1>
-
+<!-- Aqui cargo la alarma, los dispositivos y el numero asignado -->
     {% for device in devices %}
         {% if device.alarm == True %}
             <h3 style="color:red">There has been an Alarm from {{ device.name }}</h3>
@@ -21,7 +21,9 @@
     <h4>Your assigned contact number is: {{number.phone}}</h4>
     
 </body>
- 
+
+ <!-- funcion para cargar la pagina de nuevo. Su funcionalidad no esta completa todavia por ello lo deje comentado -->
+
 <script language="JavaScript">
     // function checkAlarm(){
     //     let data = JSON.parse("{{data|escapejs}}");
