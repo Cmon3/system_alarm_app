@@ -1,0 +1,8 @@
+[
+    {
+        "id":"1", "name":"Device number 1", "status":"active", "alarm":false
+    },
+    {
+        "id":"2", "name":"Device number 2", "status":"active","alarm":false
+    }
+]

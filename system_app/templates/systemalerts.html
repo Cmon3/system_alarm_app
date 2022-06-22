@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <title>System status</title>
+</head>
+
+<body>
+    <h1 style="color:blue">System status</h1>
+
+    {% for device in devices %}
+        {% if device.alarm == True %}
+            <h3 style="color:red">There has been an Alarm from {{ device.name }}</h3>
+        {% endif %}
+    {% endfor %}
+
+    {% for device in devices %}
+    <h4>The state of {{ device.name }} is: {{ device.status }}.</h4>
+    {% endfor %}
+    
+    <h4>Your assigned contact number is: {{number.phone}}</h4>
+    
+</body>
+ 
+<script language="JavaScript">
+    // function checkAlarm(){
+    //     let data = JSON.parse("{{data|escapejs}}");
+    //     for (let x in data){
+    //         if (data[x].alarm == true){
+    //             myrefresh();
+    //         }
+    //     } 
+    // }
+    function myrefresh() {
+        window.location.reload();
+    }
+    // setInterval('checkAlarm()', 3000);
+    setInterval('myrefresh()', 60000);
+</script>
